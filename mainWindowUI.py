@@ -171,6 +171,54 @@ class Ui_Form(object):
 
         self.horizontalLayout_3.addWidget(self.stopwatchGB)
 
+        self.groupBox = QGroupBox(Form)
+        self.groupBox.setObjectName(u"groupBox")
+        self.verticalLayout = QVBoxLayout(self.groupBox)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.tempBar = QProgressBar(self.groupBox)
+        self.tempBar.setObjectName(u"tempBar")
+        self.tempBar.setValue(24)
+        self.tempBar.setOrientation(Qt.Orientation.Vertical)
+
+        self.horizontalLayout_4.addWidget(self.tempBar)
+
+        self.humBar = QProgressBar(self.groupBox)
+        self.humBar.setObjectName(u"humBar")
+        self.humBar.setValue(24)
+        self.humBar.setOrientation(Qt.Orientation.Vertical)
+
+        self.horizontalLayout_4.addWidget(self.humBar)
+
+        self.preBar = QProgressBar(self.groupBox)
+        self.preBar.setObjectName(u"preBar")
+        self.preBar.setValue(24)
+        self.preBar.setOrientation(Qt.Orientation.Vertical)
+
+        self.horizontalLayout_4.addWidget(self.preBar)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_4)
+
+        self.tempLabel = QLabel(self.groupBox)
+        self.tempLabel.setObjectName(u"tempLabel")
+
+        self.verticalLayout.addWidget(self.tempLabel)
+
+        self.humLabel = QLabel(self.groupBox)
+        self.humLabel.setObjectName(u"humLabel")
+
+        self.verticalLayout.addWidget(self.humLabel)
+
+        self.preLabel = QLabel(self.groupBox)
+        self.preLabel.setObjectName(u"preLabel")
+
+        self.verticalLayout.addWidget(self.preLabel)
+
+
+        self.horizontalLayout_3.addWidget(self.groupBox)
+
 
         self.retranslateUi(Form)
 
@@ -188,5 +236,9 @@ class Ui_Form(object):
         self.label_3.setText(QCoreApplication.translate("Form", u"[TIME]", None))
         self.SPButton.setText(QCoreApplication.translate("Form", u"\u5f00\u59cb/\u6682\u505c", None))
         self.countingButton.setText(QCoreApplication.translate("Form", u"\u8ba1\u6b21", None))
+        self.groupBox.setTitle(QCoreApplication.translate("Form", u"\u73af\u5883", None))
+        self.tempLabel.setText(QCoreApplication.translate("Form", u"Temp.", None))
+        self.humLabel.setText(QCoreApplication.translate("Form", u"Humi.", None))
+        self.preLabel.setText(QCoreApplication.translate("Form", u"Pres.", None))
     # retranslateUi
 
