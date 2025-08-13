@@ -16,7 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QDial, QHBoxLayout, QLabel,
-    QSizePolicy, QVBoxLayout, QWidget)
+    QProgressBar, QPushButton, QSizePolicy, QVBoxLayout,
+    QWidget)
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -27,6 +28,8 @@ class Ui_Form(object):
         Form.setMouseTracking(False)
         self.verticalLayout = QVBoxLayout(Form)
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.label = QLabel(Form)
         self.label.setObjectName(u"label")
         font = QFont()
@@ -36,7 +39,31 @@ class Ui_Form(object):
         self.label.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
         self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout.addWidget(self.label)
+        self.horizontalLayout_2.addWidget(self.label)
+
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.passedTime = QProgressBar(Form)
+        self.passedTime.setObjectName(u"passedTime")
+        self.passedTime.setCursor(QCursor(Qt.CursorShape.BusyCursor))
+        self.passedTime.setValue(24)
+        self.passedTime.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.passedTime.setTextVisible(True)
+        self.passedTime.setOrientation(Qt.Orientation.Horizontal)
+        self.passedTime.setTextDirection(QProgressBar.Direction.TopToBottom)
+
+        self.verticalLayout_2.addWidget(self.passedTime)
+
+        self.pushButton = QPushButton(Form)
+        self.pushButton.setObjectName(u"pushButton")
+
+        self.verticalLayout_2.addWidget(self.pushButton)
+
+
+        self.horizontalLayout_2.addLayout(self.verticalLayout_2)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -86,5 +113,6 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.label.setText(QCoreApplication.translate("Form", u"[TIME]", None))
+        self.pushButton.setText(QCoreApplication.translate("Form", u"\u4e0a\u8bfe\uff01", None))
     # retranslateUi
 
