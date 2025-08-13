@@ -41,6 +41,18 @@ class Ui_Form(object):
 
         self.verticalLayout.addWidget(self.label)
 
+        self.label_2 = QLabel(Form)
+        self.label_2.setObjectName(u"label_2")
+        font1 = QFont()
+        font1.setFamilies([u"\u7b49\u7ebf"])
+        font1.setPointSize(26)
+        self.label_2.setFont(font1)
+        self.label_2.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.label_2.setWordWrap(False)
+
+        self.verticalLayout.addWidget(self.label_2)
+
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.hourDial = QDial(Form)
@@ -113,6 +125,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.label.setText(QCoreApplication.translate("Form", u"[TIME]", None))
+        self.label_2.setText(QCoreApplication.translate("Form", u"[DATE]", None))
         self.pushButton.setText(QCoreApplication.translate("Form", u"\u4e0a\u8bfe\uff01", None))
     # retranslateUi
 

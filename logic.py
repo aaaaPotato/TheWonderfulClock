@@ -15,6 +15,7 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         self.passedTime.setValue(100)
     def updateTime(self):
         self.label.setText(time.strftime("%H:%M:%S"))
+        self.label_2.setText(time.strftime("%Y-%m-%d %a"))
         self.hourDial.setValue(int(time.strftime("%H"))+12)
         self.minDial.setValue(int(time.strftime("%M"))+30)
         self.secDial.setValue(int(time.strftime("%S"))+30)
