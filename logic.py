@@ -23,6 +23,8 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         self.ptime += 10
         if self.ptime >= 144000:
             self.classTimer.stop()
+            self.pushButton.setEnabled(True)
     def classTimerStart(self):
+        self.pushButton.setEnabled(False)
         self.classTimer.timeout.connect(self.updateClassTime)
         self.classTimer.start(10000)
