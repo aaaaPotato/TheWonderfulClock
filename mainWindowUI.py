@@ -24,12 +24,12 @@ class Ui_Form(object):
         if not Form.objectName():
             Form.setObjectName(u"Form")
         Form.setEnabled(True)
-        Form.resize(505, 348)
+        Form.resize(531, 282)
         Form.setMouseTracking(False)
-        self.verticalLayout = QVBoxLayout(Form)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2 = QHBoxLayout(Form)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.verticalLayout = QVBoxLayout()
+        self.verticalLayout.setObjectName(u"verticalLayout")
         self.label = QLabel(Form)
         self.label.setObjectName(u"label")
         font = QFont()
@@ -39,31 +39,7 @@ class Ui_Form(object):
         self.label.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
         self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.horizontalLayout_2.addWidget(self.label)
-
-        self.verticalLayout_2 = QVBoxLayout()
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.passedTime = QProgressBar(Form)
-        self.passedTime.setObjectName(u"passedTime")
-        self.passedTime.setCursor(QCursor(Qt.CursorShape.BusyCursor))
-        self.passedTime.setValue(24)
-        self.passedTime.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.passedTime.setTextVisible(True)
-        self.passedTime.setOrientation(Qt.Orientation.Horizontal)
-        self.passedTime.setTextDirection(QProgressBar.Direction.TopToBottom)
-
-        self.verticalLayout_2.addWidget(self.passedTime)
-
-        self.pushButton = QPushButton(Form)
-        self.pushButton.setObjectName(u"pushButton")
-
-        self.verticalLayout_2.addWidget(self.pushButton)
-
-
-        self.horizontalLayout_2.addLayout(self.verticalLayout_2)
-
-
-        self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.verticalLayout.addWidget(self.label)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -103,6 +79,30 @@ class Ui_Form(object):
 
 
         self.verticalLayout.addLayout(self.horizontalLayout)
+
+
+        self.horizontalLayout_2.addLayout(self.verticalLayout)
+
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.passedTime = QProgressBar(Form)
+        self.passedTime.setObjectName(u"passedTime")
+        self.passedTime.setCursor(QCursor(Qt.CursorShape.BusyCursor))
+        self.passedTime.setValue(24)
+        self.passedTime.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.passedTime.setTextVisible(True)
+        self.passedTime.setOrientation(Qt.Orientation.Horizontal)
+        self.passedTime.setTextDirection(QProgressBar.Direction.TopToBottom)
+
+        self.verticalLayout_2.addWidget(self.passedTime)
+
+        self.pushButton = QPushButton(Form)
+        self.pushButton.setObjectName(u"pushButton")
+
+        self.verticalLayout_2.addWidget(self.pushButton)
+
+
+        self.horizontalLayout_2.addLayout(self.verticalLayout_2)
 
 
         self.retranslateUi(Form)
