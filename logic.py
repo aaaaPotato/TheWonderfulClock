@@ -7,6 +7,7 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         super(window,self).__init__()
         self.setupUi(self)
         self.setWindowTitle("WHAT A CLOCK!")
+        self.setWindowIcon(QtGui.QIcon("icon.png"))
         self.timer = QtCore.QTimer()
         self.timer.start(100)
         self.timer.timeout.connect(self.updateTime)
