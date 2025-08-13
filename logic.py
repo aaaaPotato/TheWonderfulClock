@@ -13,7 +13,8 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         self.timer.timeout.connect(self.updateTime)
         self.classTimer = QtCore.QTimer()
         self.pushButton.clicked.connect(self.classTimerStart)
-        self.passedTime.setValue(100)
+        self.passedTime.setRange(0, 2400)
+        self.passedTime.setValue(2400)
     def updateTime(self):
         self.label.setText(time.strftime("%H:%M:%S"))
         self.label_2.setText(time.strftime("%Y-%m-%d %a"))
@@ -21,12 +22,13 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         self.minDial.setValue(int(time.strftime("%M"))+30)
         self.secDial.setValue(int(time.strftime("%S"))+30)
     def updateClassTime(self):
-        self.passedTime.setValue(self.ptime/144000)
-        self.ptime += 10
-        if self.ptime >= 144000:
+        self.passedTime.setValue(self.ptime)
+        self.ptime += 3
+        if self.ptime >= 2400:
             self.classTimer.stop()
             self.pushButton.setEnabled(True)
     def classTimerStart(self):
         self.pushButton.setEnabled(False)
+        self.ptime = 0
         self.classTimer.timeout.connect(self.updateClassTime)
-        self.classTimer.start(10000)
+        self.classTimer.start(3000)
