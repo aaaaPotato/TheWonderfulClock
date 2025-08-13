@@ -28,8 +28,52 @@ class Ui_Form(object):
         Form.setMouseTracking(False)
         self.horizontalLayout_3 = QHBoxLayout(Form)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.classGB = QGroupBox(Form)
+        self.classGB.setObjectName(u"classGB")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.classGB.sizePolicy().hasHeightForWidth())
+        self.classGB.setSizePolicy(sizePolicy)
+        self.verticalLayout_3 = QVBoxLayout(self.classGB)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.passedTime = QProgressBar(self.classGB)
+        self.passedTime.setObjectName(u"passedTime")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.passedTime.sizePolicy().hasHeightForWidth())
+        self.passedTime.setSizePolicy(sizePolicy1)
+        self.passedTime.setCursor(QCursor(Qt.CursorShape.BusyCursor))
+        self.passedTime.setValue(24)
+        self.passedTime.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.passedTime.setTextVisible(True)
+        self.passedTime.setOrientation(Qt.Orientation.Horizontal)
+        self.passedTime.setTextDirection(QProgressBar.Direction.TopToBottom)
+
+        self.verticalLayout_3.addWidget(self.passedTime)
+
+        self.pushButton = QPushButton(self.classGB)
+        self.pushButton.setObjectName(u"pushButton")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.pushButton.sizePolicy().hasHeightForWidth())
+        self.pushButton.setSizePolicy(sizePolicy2)
+        self.pushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+
+        self.verticalLayout_3.addWidget(self.pushButton)
+
+
+        self.horizontalLayout_3.addWidget(self.classGB)
+
         self.timeGB = QGroupBox(Form)
         self.timeGB.setObjectName(u"timeGB")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Preferred)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.timeGB.sizePolicy().hasHeightForWidth())
+        self.timeGB.setSizePolicy(sizePolicy3)
         self.verticalLayout_2 = QVBoxLayout(self.timeGB)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.label = QLabel(self.timeGB)
@@ -97,32 +141,10 @@ class Ui_Form(object):
 
         self.horizontalLayout_3.addWidget(self.timeGB)
 
-        self.classGB = QGroupBox(Form)
-        self.classGB.setObjectName(u"classGB")
-        self.verticalLayout_3 = QVBoxLayout(self.classGB)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.passedTime = QProgressBar(self.classGB)
-        self.passedTime.setObjectName(u"passedTime")
-        self.passedTime.setCursor(QCursor(Qt.CursorShape.BusyCursor))
-        self.passedTime.setValue(24)
-        self.passedTime.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.passedTime.setTextVisible(True)
-        self.passedTime.setOrientation(Qt.Orientation.Horizontal)
-        self.passedTime.setTextDirection(QProgressBar.Direction.TopToBottom)
-
-        self.verticalLayout_3.addWidget(self.passedTime)
-
-        self.pushButton = QPushButton(self.classGB)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-
-        self.verticalLayout_3.addWidget(self.pushButton)
-
-
-        self.horizontalLayout_3.addWidget(self.classGB)
-
         self.stopwatchGB = QGroupBox(Form)
         self.stopwatchGB.setObjectName(u"stopwatchGB")
+        sizePolicy.setHeightForWidth(self.stopwatchGB.sizePolicy().hasHeightForWidth())
+        self.stopwatchGB.setSizePolicy(sizePolicy)
         self.verticalLayout_4 = QVBoxLayout(self.stopwatchGB)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.label_3 = QLabel(self.stopwatchGB)
@@ -148,6 +170,8 @@ class Ui_Form(object):
 
         self.countsBrowser = QTextBrowser(self.stopwatchGB)
         self.countsBrowser.setObjectName(u"countsBrowser")
+        sizePolicy2.setHeightForWidth(self.countsBrowser.sizePolicy().hasHeightForWidth())
+        self.countsBrowser.setSizePolicy(sizePolicy2)
 
         self.verticalLayout_4.addWidget(self.countsBrowser)
 
@@ -155,15 +179,26 @@ class Ui_Form(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.SPButton = QPushButton(self.stopwatchGB)
         self.SPButton.setObjectName(u"SPButton")
+        sizePolicy2.setHeightForWidth(self.SPButton.sizePolicy().hasHeightForWidth())
+        self.SPButton.setSizePolicy(sizePolicy2)
         self.SPButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
 
         self.horizontalLayout_2.addWidget(self.SPButton)
 
         self.countingButton = QPushButton(self.stopwatchGB)
         self.countingButton.setObjectName(u"countingButton")
+        sizePolicy2.setHeightForWidth(self.countingButton.sizePolicy().hasHeightForWidth())
+        self.countingButton.setSizePolicy(sizePolicy2)
         self.countingButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
 
         self.horizontalLayout_2.addWidget(self.countingButton)
+
+        self.toZeroButton = QPushButton(self.stopwatchGB)
+        self.toZeroButton.setObjectName(u"toZeroButton")
+        sizePolicy2.setHeightForWidth(self.toZeroButton.sizePolicy().hasHeightForWidth())
+        self.toZeroButton.setSizePolicy(sizePolicy2)
+
+        self.horizontalLayout_2.addWidget(self.toZeroButton)
 
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_2)
@@ -173,6 +208,8 @@ class Ui_Form(object):
 
         self.groupBox = QGroupBox(Form)
         self.groupBox.setObjectName(u"groupBox")
+        sizePolicy.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
+        self.groupBox.setSizePolicy(sizePolicy)
         self.verticalLayout = QVBoxLayout(self.groupBox)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.horizontalLayout_4 = QHBoxLayout()
@@ -227,15 +264,16 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
+        self.classGB.setTitle(QCoreApplication.translate("Form", u"\u8bfe\u5802", None))
+        self.pushButton.setText(QCoreApplication.translate("Form", u"\u4e0a\u8bfe\uff01", None))
         self.timeGB.setTitle(QCoreApplication.translate("Form", u"\u65f6\u95f4", None))
         self.label.setText(QCoreApplication.translate("Form", u"[TIME]", None))
         self.label_2.setText(QCoreApplication.translate("Form", u"[DATE]", None))
-        self.classGB.setTitle(QCoreApplication.translate("Form", u"\u8bfe\u5802", None))
-        self.pushButton.setText(QCoreApplication.translate("Form", u"\u4e0a\u8bfe\uff01", None))
         self.stopwatchGB.setTitle(QCoreApplication.translate("Form", u"\u79d2\u8868", None))
         self.label_3.setText(QCoreApplication.translate("Form", u"[TIME]", None))
         self.SPButton.setText(QCoreApplication.translate("Form", u"\u5f00\u59cb/\u6682\u505c", None))
         self.countingButton.setText(QCoreApplication.translate("Form", u"\u8ba1\u6b21", None))
+        self.toZeroButton.setText(QCoreApplication.translate("Form", u"\u5f52\u96f6", None))
         self.groupBox.setTitle(QCoreApplication.translate("Form", u"\u73af\u5883", None))
         self.tempLabel.setText(QCoreApplication.translate("Form", u"Temp.", None))
         self.humLabel.setText(QCoreApplication.translate("Form", u"Humi.", None))
