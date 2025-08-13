@@ -11,6 +11,6 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         self.timer.timeout.connect(self.updateTime)
     def updateTime(self):
         self.label.setText(time.strftime("%H:%M:%S"))
-        self.hourDial.setValue(int(time.strftime("%H")))
-        self.minDial.setValue(int(time.strftime("%M")))
-        self.secDial.setValue(int(time.strftime("%S")))
+        self.hourDial.setValue(int(time.strftime("%H"))+12)
+        self.minDial.setValue(int(time.strftime("%M"))+30)
+        self.secDial.setValue(int(time.strftime("%S"))+30)
