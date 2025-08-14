@@ -71,19 +71,3 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
     def countOne(self):
         self.counts += 1
         self.countsBrowser.append("["+str(self.counts)+"]  "+self.strpdtime)
-            
-    # def swTimerStart(self):
-    #     self.swTimer.timeout.connect(self.updateSWTime)
-    #     self.beginTime = time.time()
-    #     self.toZeroButton.setEnabled(False)
-    #     self.countingButton.setEnabled(True)
-    #     self.swTimer.start(15)
-    # def updateSWTime(self):
-    #     self.now = time.time()
-    #     self.pdtime += self.now - self.beginTime
-    #     self.strpdtime = str(int(self.pdtime//(60*1000)))+":"+str(int((self.pdtime//1000)%60))+":"+str(round(self.pdtime%60))
-    #     self.label_3.setText(self.strpdtime)
-    # def swTimerStop(self):
-    #     self.swTimer.stop()
-    #     self.toZeroButton.setEnabled(True)
-    #     self.countingButton.setEnabled(False)
