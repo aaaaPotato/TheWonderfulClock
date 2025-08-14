@@ -35,6 +35,24 @@ class Ui_Form(object):
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.verticalLayout_6 = QVBoxLayout()
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.countdownToCEE = QGroupBox(Form)
+        self.countdownToCEE.setObjectName(u"countdownToCEE")
+        self.verticalLayout_8 = QVBoxLayout(self.countdownToCEE)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.CEETime = QLabel(self.countdownToCEE)
+        self.CEETime.setObjectName(u"CEETime")
+        font = QFont()
+        font.setFamilies([u"\u7b49\u7ebf"])
+        font.setPointSize(48)
+        font.setBold(True)
+        self.CEETime.setFont(font)
+        self.CEETime.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_8.addWidget(self.CEETime)
+
+
+        self.verticalLayout_6.addWidget(self.countdownToCEE)
+
         self.classesGB = QGroupBox(Form)
         self.classesGB.setObjectName(u"classesGB")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Minimum)
@@ -51,10 +69,10 @@ class Ui_Form(object):
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.classesBrowser.sizePolicy().hasHeightForWidth())
         self.classesBrowser.setSizePolicy(sizePolicy2)
-        font = QFont()
-        font.setFamilies([u"\u7b49\u7ebf"])
-        font.setPointSize(36)
-        self.classesBrowser.setFont(font)
+        font1 = QFont()
+        font1.setFamilies([u"\u7b49\u7ebf"])
+        font1.setPointSize(36)
+        self.classesBrowser.setFont(font1)
         self.classesBrowser.setMarkdown(u"")
 
         self.verticalLayout_5.addWidget(self.classesBrowser)
@@ -112,10 +130,10 @@ class Ui_Form(object):
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.label = QLabel(self.timeGB)
         self.label.setObjectName(u"label")
-        font1 = QFont()
-        font1.setFamilies([u"\u7b49\u7ebf"])
-        font1.setPointSize(72)
-        self.label.setFont(font1)
+        font2 = QFont()
+        font2.setFamilies([u"\u7b49\u7ebf"])
+        font2.setPointSize(72)
+        self.label.setFont(font2)
         self.label.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
         self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
@@ -123,10 +141,10 @@ class Ui_Form(object):
 
         self.label_2 = QLabel(self.timeGB)
         self.label_2.setObjectName(u"label_2")
-        font2 = QFont()
-        font2.setFamilies([u"\u7b49\u7ebf"])
-        font2.setPointSize(26)
-        self.label_2.setFont(font2)
+        font3 = QFont()
+        font3.setFamilies([u"\u7b49\u7ebf"])
+        font3.setPointSize(26)
+        self.label_2.setFont(font3)
         self.label_2.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
         self.label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_2.setWordWrap(False)
@@ -185,10 +203,10 @@ class Ui_Form(object):
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.label_3 = QLabel(self.stopwatchGB)
         self.label_3.setObjectName(u"label_3")
-        font3 = QFont()
-        font3.setFamilies([u"\u7b49\u7ebf"])
-        font3.setPointSize(24)
-        self.label_3.setFont(font3)
+        font4 = QFont()
+        font4.setFamilies([u"\u7b49\u7ebf"])
+        font4.setPointSize(24)
+        self.label_3.setFont(font4)
         self.label_3.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_4.addWidget(self.label_3)
@@ -316,6 +334,8 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
+        self.countdownToCEE.setTitle(QCoreApplication.translate("Form", u"\u8ddd\u79bb\u9ad8\u8003", None))
+        self.CEETime.setText(QCoreApplication.translate("Form", u"1000 \u5929", None))
         self.classesGB.setTitle(QCoreApplication.translate("Form", u"\u8bfe\u7a0b", None))
         self.classesBrowser.setHtml(QCoreApplication.translate("Form", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"

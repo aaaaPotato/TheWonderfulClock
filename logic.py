@@ -1,11 +1,12 @@
 from PySide6 import QtCore, QtGui, QtWidgets
 import mainWindowUI
-import time
+import time,datetime
 class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
     def __init__(self):
         self.ptime = 0
         self.pdtime = 0
         self.counts = 0
+        self.CEETime1 = datetime.date(2028,6,6)
         super(window,self).__init__()
         self.setupUi(self)
         self.setWindowTitle("WHAT A CLOCK!")
@@ -28,6 +29,11 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         self.toZeroButton.clicked.connect(self.toZero)
         self.countingButton.clicked.connect(self.countOne)
         self.label_3.setText("0:0.0")
+        self.udCEETime = QtCore.QTimer()
+        self.udCEETime.timeout.connect(self.updateCEETime)
+        self.udCEETime.start(1000*60*60)
+        self.now1 = datetime.date.today()
+        self.CEETime.setText(str(self.CEETime1.__sub__(self.now1).days)+" 天")
     def updateTime(self):
         self.label.setText(time.strftime("%H:%M:%S"))
         self.label_2.setText(time.strftime("%Y-%m-%d %a"))
@@ -71,3 +77,6 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
     def countOne(self):
         self.counts += 1
         self.countsBrowser.append("["+str(self.counts)+"]  "+self.strpdtime)
+    def updateCEETime(self):
+        self.now1 = datetime.date.today()
+        self.CEETime.setText(str(self.CEETime1.__sub__(self.now1).days+" 天"))

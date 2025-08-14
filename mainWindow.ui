@@ -29,6 +29,32 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_6">
      <item>
+      <widget class="QGroupBox" name="countdownToCEE">
+       <property name="title">
+        <string>距离高考</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <widget class="QLabel" name="CEETime">
+          <property name="font">
+           <font>
+            <family>等线</family>
+            <pointsize>48</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>1000 天</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
       <widget class="QGroupBox" name="classesGB">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
