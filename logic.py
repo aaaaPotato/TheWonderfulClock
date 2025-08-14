@@ -4,6 +4,8 @@ import time
 class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
     def __init__(self):
         self.ptime = 0
+        self.pdtime = 0
+        self.counts = 0
         super(window,self).__init__()
         self.setupUi(self)
         self.setWindowTitle("WHAT A CLOCK!")
@@ -15,6 +17,17 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         self.pushButton.clicked.connect(self.classTimerStart)
         self.passedTime.setRange(0, 2400)
         self.passedTime.setValue(2400)
+        self.swTimer = QtCore.QTimer()
+        self.now = time.time()
+        self.beginTime = time.time()
+        self.toZeroButton.setEnabled(True)
+        self.countingButton.setEnabled(False)
+        self.swTimer.timeout.connect(self.updateSWTime)
+        self.swTimer.start(15)
+        self.SPButton.clicked.connect(self.beginSW)
+        self.toZeroButton.clicked.connect(self.toZero)
+        self.countingButton.clicked.connect(self.countOne)
+        self.label_3.setText("0:0.0")
     def updateTime(self):
         self.label.setText(time.strftime("%H:%M:%S"))
         self.label_2.setText(time.strftime("%Y-%m-%d %a"))
@@ -32,3 +45,45 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         self.ptime = 0
         self.classTimer.timeout.connect(self.updateClassTime)
         self.classTimer.start(3000)
+    def updateSWTime(self):
+        self.swDial.setValue(self.pdtime)
+        if self.SPButton.isChecked():
+            self.toZeroButton.setEnabled(False)
+            self.countingButton.setEnabled(True)
+            self.now = time.time()
+            self.pdtime += self.now - self.beginTime
+            self.strpdtime = str(int(self.pdtime//60))+":"+str(int(self.pdtime%60))+"."+str(round((self.pdtime*100)%100))
+            self.label_3.setText(self.strpdtime)
+            self.beginTime = self.now
+        else:
+            self.swTimer.stop()
+            self.toZeroButton.setEnabled(True)
+            self.countingButton.setEnabled(False)
+    def beginSW(self):
+        self.swTimer.start(15)
+        self.beginTime = time.time()
+    def toZero(self):
+        self.pdtime = 0
+        self.strpdtime = "0:0.0"
+        self.label_3.setText(self.strpdtime)
+        self.countsBrowser.clear()
+        self.counts = 0
+    def countOne(self):
+        self.counts += 1
+        self.countsBrowser.append("["+str(self.counts)+"]  "+self.strpdtime)
+            
+    # def swTimerStart(self):
+    #     self.swTimer.timeout.connect(self.updateSWTime)
+    #     self.beginTime = time.time()
+    #     self.toZeroButton.setEnabled(False)
+    #     self.countingButton.setEnabled(True)
+    #     self.swTimer.start(15)
+    # def updateSWTime(self):
+    #     self.now = time.time()
+    #     self.pdtime += self.now - self.beginTime
+    #     self.strpdtime = str(int(self.pdtime//(60*1000)))+":"+str(int((self.pdtime//1000)%60))+":"+str(round(self.pdtime%60))
+    #     self.label_3.setText(self.strpdtime)
+    # def swTimerStop(self):
+    #     self.swTimer.stop()
+    #     self.toZeroButton.setEnabled(True)
+    #     self.countingButton.setEnabled(False)

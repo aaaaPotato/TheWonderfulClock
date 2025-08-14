@@ -156,16 +156,16 @@ class Ui_Form(object):
 
         self.verticalLayout_4.addWidget(self.label_3)
 
-        self.dial = QDial(self.stopwatchGB)
-        self.dial.setObjectName(u"dial")
-        self.dial.setEnabled(False)
-        self.dial.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
-        self.dial.setMaximum(60)
-        self.dial.setPageStep(5)
-        self.dial.setWrapping(True)
-        self.dial.setNotchesVisible(True)
+        self.swDial = QDial(self.stopwatchGB)
+        self.swDial.setObjectName(u"swDial")
+        self.swDial.setEnabled(False)
+        self.swDial.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.swDial.setMaximum(60)
+        self.swDial.setPageStep(5)
+        self.swDial.setWrapping(True)
+        self.swDial.setNotchesVisible(True)
 
-        self.verticalLayout_4.addWidget(self.dial)
+        self.verticalLayout_4.addWidget(self.swDial)
 
         self.countsBrowser = QTextBrowser(self.stopwatchGB)
         self.countsBrowser.setObjectName(u"countsBrowser")
@@ -181,6 +181,12 @@ class Ui_Form(object):
         sizePolicy1.setHeightForWidth(self.SPButton.sizePolicy().hasHeightForWidth())
         self.SPButton.setSizePolicy(sizePolicy1)
         self.SPButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.SPButton.setMouseTracking(False)
+        self.SPButton.setTabletTracking(False)
+        self.SPButton.setCheckable(True)
+        self.SPButton.setChecked(False)
+        self.SPButton.setAutoRepeat(False)
+        self.SPButton.setAutoExclusive(True)
 
         self.horizontalLayout_2.addWidget(self.SPButton)
 
@@ -255,6 +261,14 @@ class Ui_Form(object):
 
         self.horizontalLayout_3.addWidget(self.groupBox)
 
+        QWidget.setTabOrder(self.pushButton, self.hourDial)
+        QWidget.setTabOrder(self.hourDial, self.minDial)
+        QWidget.setTabOrder(self.minDial, self.secDial)
+        QWidget.setTabOrder(self.secDial, self.swDial)
+        QWidget.setTabOrder(self.swDial, self.countsBrowser)
+        QWidget.setTabOrder(self.countsBrowser, self.SPButton)
+        QWidget.setTabOrder(self.SPButton, self.countingButton)
+        QWidget.setTabOrder(self.countingButton, self.toZeroButton)
 
         self.retranslateUi(Form)
 

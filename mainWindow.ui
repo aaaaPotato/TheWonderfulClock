@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>867</width>
+    <width>887</width>
     <height>467</height>
    </rect>
   </property>
@@ -243,7 +243,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QDial" name="dial">
+       <widget class="QDial" name="swDial">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -287,8 +287,26 @@
           <property name="cursor">
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
+          <property name="mouseTracking">
+           <bool>false</bool>
+          </property>
+          <property name="tabletTracking">
+           <bool>false</bool>
+          </property>
           <property name="text">
            <string>开始/暂停</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <property name="autoRepeat">
+           <bool>false</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -398,6 +416,16 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>pushButton</tabstop>
+  <tabstop>hourDial</tabstop>
+  <tabstop>minDial</tabstop>
+  <tabstop>secDial</tabstop>
+  <tabstop>swDial</tabstop>
+  <tabstop>SPButton</tabstop>
+  <tabstop>countingButton</tabstop>
+  <tabstop>toZeroButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
