@@ -24,7 +24,7 @@ class Ui_Form(object):
         if not Form.objectName():
             Form.setObjectName(u"Form")
         Form.setEnabled(True)
-        Form.resize(867, 467)
+        Form.resize(920, 582)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -33,10 +33,42 @@ class Ui_Form(object):
         Form.setMouseTracking(False)
         self.horizontalLayout_3 = QHBoxLayout(Form)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.verticalLayout_6 = QVBoxLayout()
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.classesGB = QGroupBox(Form)
+        self.classesGB.setObjectName(u"classesGB")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Minimum)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.classesGB.sizePolicy().hasHeightForWidth())
+        self.classesGB.setSizePolicy(sizePolicy1)
+        self.verticalLayout_5 = QVBoxLayout(self.classesGB)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.classesBrowser = QTextBrowser(self.classesGB)
+        self.classesBrowser.setObjectName(u"classesBrowser")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.classesBrowser.sizePolicy().hasHeightForWidth())
+        self.classesBrowser.setSizePolicy(sizePolicy2)
+        font = QFont()
+        font.setFamilies([u"\u7b49\u7ebf"])
+        font.setPointSize(36)
+        self.classesBrowser.setFont(font)
+        self.classesBrowser.setMarkdown(u"")
+
+        self.verticalLayout_5.addWidget(self.classesBrowser)
+
+
+        self.verticalLayout_6.addWidget(self.classesGB)
+
         self.classGB = QGroupBox(Form)
         self.classGB.setObjectName(u"classGB")
-        sizePolicy.setHeightForWidth(self.classGB.sizePolicy().hasHeightForWidth())
-        self.classGB.setSizePolicy(sizePolicy)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Maximum)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.classGB.sizePolicy().hasHeightForWidth())
+        self.classGB.setSizePolicy(sizePolicy3)
         self.verticalLayout_3 = QVBoxLayout(self.classGB)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.passedTime = QProgressBar(self.classGB)
@@ -54,33 +86,36 @@ class Ui_Form(object):
 
         self.pushButton = QPushButton(self.classGB)
         self.pushButton.setObjectName(u"pushButton")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.pushButton.sizePolicy().hasHeightForWidth())
-        self.pushButton.setSizePolicy(sizePolicy1)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.pushButton.sizePolicy().hasHeightForWidth())
+        self.pushButton.setSizePolicy(sizePolicy4)
         self.pushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
 
         self.verticalLayout_3.addWidget(self.pushButton)
 
 
-        self.horizontalLayout_3.addWidget(self.classGB)
+        self.verticalLayout_6.addWidget(self.classGB)
+
+
+        self.horizontalLayout_3.addLayout(self.verticalLayout_6)
 
         self.timeGB = QGroupBox(Form)
         self.timeGB.setObjectName(u"timeGB")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.timeGB.sizePolicy().hasHeightForWidth())
-        self.timeGB.setSizePolicy(sizePolicy2)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.timeGB.sizePolicy().hasHeightForWidth())
+        self.timeGB.setSizePolicy(sizePolicy5)
         self.verticalLayout_2 = QVBoxLayout(self.timeGB)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.label = QLabel(self.timeGB)
         self.label.setObjectName(u"label")
-        font = QFont()
-        font.setFamilies([u"\u7b49\u7ebf"])
-        font.setPointSize(72)
-        self.label.setFont(font)
+        font1 = QFont()
+        font1.setFamilies([u"\u7b49\u7ebf"])
+        font1.setPointSize(72)
+        self.label.setFont(font1)
         self.label.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
         self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
@@ -88,10 +123,10 @@ class Ui_Form(object):
 
         self.label_2 = QLabel(self.timeGB)
         self.label_2.setObjectName(u"label_2")
-        font1 = QFont()
-        font1.setFamilies([u"\u7b49\u7ebf"])
-        font1.setPointSize(26)
-        self.label_2.setFont(font1)
+        font2 = QFont()
+        font2.setFamilies([u"\u7b49\u7ebf"])
+        font2.setPointSize(26)
+        self.label_2.setFont(font2)
         self.label_2.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
         self.label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_2.setWordWrap(False)
@@ -140,6 +175,8 @@ class Ui_Form(object):
 
         self.horizontalLayout_3.addWidget(self.timeGB)
 
+        self.verticalLayout_7 = QVBoxLayout()
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.stopwatchGB = QGroupBox(Form)
         self.stopwatchGB.setObjectName(u"stopwatchGB")
         sizePolicy.setHeightForWidth(self.stopwatchGB.sizePolicy().hasHeightForWidth())
@@ -148,10 +185,10 @@ class Ui_Form(object):
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.label_3 = QLabel(self.stopwatchGB)
         self.label_3.setObjectName(u"label_3")
-        font2 = QFont()
-        font2.setFamilies([u"\u7b49\u7ebf"])
-        font2.setPointSize(24)
-        self.label_3.setFont(font2)
+        font3 = QFont()
+        font3.setFamilies([u"\u7b49\u7ebf"])
+        font3.setPointSize(24)
+        self.label_3.setFont(font3)
         self.label_3.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_4.addWidget(self.label_3)
@@ -169,8 +206,8 @@ class Ui_Form(object):
 
         self.countsBrowser = QTextBrowser(self.stopwatchGB)
         self.countsBrowser.setObjectName(u"countsBrowser")
-        sizePolicy1.setHeightForWidth(self.countsBrowser.sizePolicy().hasHeightForWidth())
-        self.countsBrowser.setSizePolicy(sizePolicy1)
+        sizePolicy4.setHeightForWidth(self.countsBrowser.sizePolicy().hasHeightForWidth())
+        self.countsBrowser.setSizePolicy(sizePolicy4)
 
         self.verticalLayout_4.addWidget(self.countsBrowser)
 
@@ -178,8 +215,8 @@ class Ui_Form(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.SPButton = QPushButton(self.stopwatchGB)
         self.SPButton.setObjectName(u"SPButton")
-        sizePolicy1.setHeightForWidth(self.SPButton.sizePolicy().hasHeightForWidth())
-        self.SPButton.setSizePolicy(sizePolicy1)
+        sizePolicy4.setHeightForWidth(self.SPButton.sizePolicy().hasHeightForWidth())
+        self.SPButton.setSizePolicy(sizePolicy4)
         self.SPButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.SPButton.setMouseTracking(False)
         self.SPButton.setTabletTracking(False)
@@ -192,16 +229,16 @@ class Ui_Form(object):
 
         self.countingButton = QPushButton(self.stopwatchGB)
         self.countingButton.setObjectName(u"countingButton")
-        sizePolicy1.setHeightForWidth(self.countingButton.sizePolicy().hasHeightForWidth())
-        self.countingButton.setSizePolicy(sizePolicy1)
+        sizePolicy4.setHeightForWidth(self.countingButton.sizePolicy().hasHeightForWidth())
+        self.countingButton.setSizePolicy(sizePolicy4)
         self.countingButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
 
         self.horizontalLayout_2.addWidget(self.countingButton)
 
         self.toZeroButton = QPushButton(self.stopwatchGB)
         self.toZeroButton.setObjectName(u"toZeroButton")
-        sizePolicy1.setHeightForWidth(self.toZeroButton.sizePolicy().hasHeightForWidth())
-        self.toZeroButton.setSizePolicy(sizePolicy1)
+        sizePolicy4.setHeightForWidth(self.toZeroButton.sizePolicy().hasHeightForWidth())
+        self.toZeroButton.setSizePolicy(sizePolicy4)
 
         self.horizontalLayout_2.addWidget(self.toZeroButton)
 
@@ -209,7 +246,7 @@ class Ui_Form(object):
         self.verticalLayout_4.addLayout(self.horizontalLayout_2)
 
 
-        self.horizontalLayout_3.addWidget(self.stopwatchGB)
+        self.verticalLayout_7.addWidget(self.stopwatchGB)
 
         self.groupBox = QGroupBox(Form)
         self.groupBox.setObjectName(u"groupBox")
@@ -259,14 +296,16 @@ class Ui_Form(object):
         self.verticalLayout.addWidget(self.preLabel)
 
 
-        self.horizontalLayout_3.addWidget(self.groupBox)
+        self.verticalLayout_7.addWidget(self.groupBox)
+
+
+        self.horizontalLayout_3.addLayout(self.verticalLayout_7)
 
         QWidget.setTabOrder(self.pushButton, self.hourDial)
         QWidget.setTabOrder(self.hourDial, self.minDial)
         QWidget.setTabOrder(self.minDial, self.secDial)
         QWidget.setTabOrder(self.secDial, self.swDial)
-        QWidget.setTabOrder(self.swDial, self.countsBrowser)
-        QWidget.setTabOrder(self.countsBrowser, self.SPButton)
+        QWidget.setTabOrder(self.swDial, self.SPButton)
         QWidget.setTabOrder(self.SPButton, self.countingButton)
         QWidget.setTabOrder(self.countingButton, self.toZeroButton)
 
@@ -277,6 +316,15 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
+        self.classesGB.setTitle(QCoreApplication.translate("Form", u"\u8bfe\u7a0b", None))
+        self.classesBrowser.setHtml(QCoreApplication.translate("Form", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'\u7b49\u7ebf'; font-size:36pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:24px; margin-bottom:24px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.classGB.setTitle(QCoreApplication.translate("Form", u"\u8bfe\u5802", None))
         self.pushButton.setText(QCoreApplication.translate("Form", u"\u4e0a\u8bfe\uff01", None))
         self.timeGB.setTitle(QCoreApplication.translate("Form", u"\u65f6\u95f4", None))
