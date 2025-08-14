@@ -133,6 +133,7 @@ class Ui_Form(object):
         font2 = QFont()
         font2.setFamilies([u"\u7b49\u7ebf"])
         font2.setPointSize(72)
+        font2.setBold(True)
         self.label.setFont(font2)
         self.label.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
         self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)

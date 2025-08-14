@@ -177,6 +177,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
          <font>
           <family>等线</family>
           <pointsize>72</pointsize>
+          <bold>true</bold>
          </font>
         </property>
         <property name="cursor">
