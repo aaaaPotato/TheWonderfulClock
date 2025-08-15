@@ -1,15 +1,16 @@
 from PySide6 import QtCore, QtGui, QtWidgets
 import mainWindowUI
-import time,datetime
+import time,datetime,csv
 class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
     def __init__(self):
         self.ptime = 0
         self.pdtime = 0
         self.counts = 0
+        self.weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
         self.CEETime1 = datetime.date(2028,6,6)
         super(window,self).__init__()
         self.setupUi(self)
-        self.setWindowTitle("WHAT A CLOCK!")
+        self.setWindowTitle("WonderfulClock")
         self.setWindowIcon(QtGui.QIcon("icon.png"))
         self.timer = QtCore.QTimer()
         self.timer.start(100)
@@ -34,6 +35,11 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         self.udCEETime.start(1000*60*60)
         self.now1 = datetime.date.today()
         self.CEETime.setText(str(self.CEETime1.__sub__(self.now1).days)+" 天")
+        with open("classes.csv", "r", encoding="utf-8") as f:
+            reader = csv.reader(f)
+            self.classes = list(reader)
+        self.clsTimer = QtCore.QTimer()
+        self.clsTimer.timeout.connect(self.updateClasses)
     def updateTime(self):
         self.label.setText(time.strftime("%H:%M:%S"))
         self.label_2.setText(time.strftime("%Y-%m-%d %a"))
@@ -73,6 +79,7 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         self.strpdtime = "0:0.0"
         self.label_3.setText(self.strpdtime)
         self.countsBrowser.clear()
+        self.swDial.setValue(0)
         self.counts = 0
     def countOne(self):
         self.counts += 1
@@ -80,3 +87,5 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
     def updateCEETime(self):
         self.now1 = datetime.date.today()
         self.CEETime.setText(str(self.CEETime1.__sub__(self.now1).days+" 天"))
+    def updateClasses(self):
+        
