@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QDial, QGroupBox, QHBoxLayout,
     QLabel, QProgressBar, QPushButton, QSizePolicy,
-    QTextBrowser, QVBoxLayout, QWidget)
+    QTextBrowser, QTextEdit, QVBoxLayout, QWidget)
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -62,7 +62,7 @@ class Ui_Form(object):
         self.classesGB.setSizePolicy(sizePolicy1)
         self.verticalLayout_5 = QVBoxLayout(self.classesGB)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.classesBrowser = QTextBrowser(self.classesGB)
+        self.classesBrowser = QTextEdit(self.classesGB)
         self.classesBrowser.setObjectName(u"classesBrowser")
         sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
         sizePolicy2.setHorizontalStretch(0)
@@ -71,9 +71,9 @@ class Ui_Form(object):
         self.classesBrowser.setSizePolicy(sizePolicy2)
         font1 = QFont()
         font1.setFamilies([u"\u7b49\u7ebf"])
-        font1.setPointSize(36)
+        font1.setPointSize(18)
         self.classesBrowser.setFont(font1)
-        self.classesBrowser.setMarkdown(u"")
+        self.classesBrowser.setReadOnly(True)
 
         self.verticalLayout_5.addWidget(self.classesBrowser)
 
@@ -338,14 +338,6 @@ class Ui_Form(object):
         self.countdownToCEE.setTitle(QCoreApplication.translate("Form", u"\u8ddd\u79bb\u9ad8\u8003", None))
         self.CEETime.setText(QCoreApplication.translate("Form", u"1000 \u5929", None))
         self.classesGB.setTitle(QCoreApplication.translate("Form", u"\u8bfe\u7a0b", None))
-        self.classesBrowser.setHtml(QCoreApplication.translate("Form", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'\u7b49\u7ebf'; font-size:36pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:24px; margin-bottom:24px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.classGB.setTitle(QCoreApplication.translate("Form", u"\u8bfe\u5802", None))
         self.pushButton.setText(QCoreApplication.translate("Form", u"\u4e0a\u8bfe\uff01", None))
         self.timeGB.setTitle(QCoreApplication.translate("Form", u"\u65f6\u95f4", None))
