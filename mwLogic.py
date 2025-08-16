@@ -1,7 +1,7 @@
 from PySide6 import QtCore, QtGui, QtWidgets
 from fwLogic import floatingWindow
 import mainWindowUI
-import time,datetime,json
+import time,datetime,json,requests
 class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
     def __init__(self):
         self.ptime = 2400
@@ -47,6 +47,10 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         self.flsTimer = QtCore.QTimer()
         self.flsTimer.timeout.connect(self.checkFullscreen)
         self.flsTimer.start(100)
+        self.weatherTimer = QtCore.QTimer()
+        self.weatherTimer.timeout.connect(self.updateWeather)
+        self.weatherTimer.start(1000*60*60)
+        self.updateWeather()
     def updateTime(self):
         self.label.setText(time.strftime("%H:%M:%S"))
         self.label_2.setText(time.strftime("%Y-%m-%d %a"))
@@ -114,3 +118,17 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
             self.activateFWButton.setEnabled(True)
             if self.isFullScreen():
                 self.showNormal()
+    def updateWeather(self):
+        try:
+            response = requests.get("https://api.seniverse.com/v3/weather/now.json?key=SQ-vSmTyW07Gbnv0H&location=chongqing&language=zh-Hans&unit=c")
+            data = response.json()
+            if data and 'results' in data and len(data['results']) > 0:
+                weather = data['results'][0]['now']
+                temperature = weather['temperature']
+                text = weather['text']
+                index = weather['code']
+                self.weatherInfo.setText(f"{text}  {temperature}°C")
+                self.weatherLogo.setPixmap(QtGui.QPixmap(f"weatherLogo/{index}@2x.png"))
+        except Exception as e:
+            self.weatherInfo.setText("天气信息获取失败")
+            print(f"Error fetching weather data: {e}")

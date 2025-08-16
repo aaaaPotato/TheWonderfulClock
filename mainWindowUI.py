@@ -17,7 +17,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QDial, QGroupBox, QHBoxLayout,
     QLabel, QProgressBar, QPushButton, QSizePolicy,
-    QTextBrowser, QTextEdit, QVBoxLayout, QWidget)
+    QSpacerItem, QTextBrowser, QTextEdit, QVBoxLayout,
+    QWidget)
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -31,8 +32,8 @@ class Ui_Form(object):
         sizePolicy.setHeightForWidth(Form.sizePolicy().hasHeightForWidth())
         Form.setSizePolicy(sizePolicy)
         Form.setMouseTracking(False)
-        self.horizontalLayout_3 = QHBoxLayout(Form)
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_5 = QHBoxLayout(Form)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.verticalLayout_6 = QVBoxLayout()
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.countdownToCEE = QGroupBox(Form)
@@ -117,7 +118,7 @@ class Ui_Form(object):
         self.verticalLayout_6.addWidget(self.classGB)
 
 
-        self.horizontalLayout_3.addLayout(self.verticalLayout_6)
+        self.horizontalLayout_5.addLayout(self.verticalLayout_6)
 
         self.timeGB = QGroupBox(Form)
         self.timeGB.setObjectName(u"timeGB")
@@ -192,25 +193,72 @@ class Ui_Form(object):
         self.verticalLayout_2.addLayout(self.horizontalLayout)
 
 
-        self.horizontalLayout_3.addWidget(self.timeGB)
+        self.horizontalLayout_5.addWidget(self.timeGB)
 
         self.verticalLayout_7 = QVBoxLayout()
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.stopwatchGB = QGroupBox(Form)
-        self.stopwatchGB.setObjectName(u"stopwatchGB")
-        sizePolicy6 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.MinimumExpanding)
+        self.groupBox = QGroupBox(Form)
+        self.groupBox.setObjectName(u"groupBox")
+        sizePolicy4.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
+        self.groupBox.setSizePolicy(sizePolicy4)
+        self.verticalLayout = QVBoxLayout(self.groupBox)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.weatherLogo = QLabel(self.groupBox)
+        self.weatherLogo.setObjectName(u"weatherLogo")
+        sizePolicy.setHeightForWidth(self.weatherLogo.sizePolicy().hasHeightForWidth())
+        self.weatherLogo.setSizePolicy(sizePolicy)
+        self.weatherLogo.setPixmap(QPixmap(u"weatherLogo/0@2x.png"))
+        self.weatherLogo.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout_3.addWidget(self.weatherLogo)
+
+        self.weatherInfo = QLabel(self.groupBox)
+        self.weatherInfo.setObjectName(u"weatherInfo")
+        sizePolicy6 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy6.setHorizontalStretch(0)
         sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.stopwatchGB.sizePolicy().hasHeightForWidth())
-        self.stopwatchGB.setSizePolicy(sizePolicy6)
+        sizePolicy6.setHeightForWidth(self.weatherInfo.sizePolicy().hasHeightForWidth())
+        self.weatherInfo.setSizePolicy(sizePolicy6)
+        font4 = QFont()
+        font4.setFamilies([u"\u7b49\u7ebf"])
+        font4.setPointSize(20)
+        self.weatherInfo.setFont(font4)
+
+        self.horizontalLayout_3.addWidget(self.weatherInfo)
+
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_3)
+
+        self.pushButton_2 = QPushButton(self.groupBox)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+
+        self.verticalLayout.addWidget(self.pushButton_2)
+
+
+        self.verticalLayout_7.addWidget(self.groupBox)
+
+        self.stopwatchGB = QGroupBox(Form)
+        self.stopwatchGB.setObjectName(u"stopwatchGB")
+        sizePolicy7 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.MinimumExpanding)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.stopwatchGB.sizePolicy().hasHeightForWidth())
+        self.stopwatchGB.setSizePolicy(sizePolicy7)
         self.verticalLayout_4 = QVBoxLayout(self.stopwatchGB)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.label_3 = QLabel(self.stopwatchGB)
         self.label_3.setObjectName(u"label_3")
-        font4 = QFont()
-        font4.setFamilies([u"\u7b49\u7ebf"])
-        font4.setPointSize(24)
-        self.label_3.setFont(font4)
+        font5 = QFont()
+        font5.setFamilies([u"\u7b49\u7ebf"])
+        font5.setPointSize(24)
+        self.label_3.setFont(font5)
         self.label_3.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_4.addWidget(self.label_3)
@@ -284,11 +332,11 @@ class Ui_Form(object):
 
         self.activateFWButton = QPushButton(self.windowSettingGB)
         self.activateFWButton.setObjectName(u"activateFWButton")
-        sizePolicy7 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
-        sizePolicy7.setHorizontalStretch(0)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.activateFWButton.sizePolicy().hasHeightForWidth())
-        self.activateFWButton.setSizePolicy(sizePolicy7)
+        sizePolicy8 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        sizePolicy8.setHorizontalStretch(0)
+        sizePolicy8.setVerticalStretch(0)
+        sizePolicy8.setHeightForWidth(self.activateFWButton.sizePolicy().hasHeightForWidth())
+        self.activateFWButton.setSizePolicy(sizePolicy8)
 
         self.horizontalLayout_4.addWidget(self.activateFWButton)
 
@@ -296,7 +344,7 @@ class Ui_Form(object):
         self.verticalLayout_7.addWidget(self.windowSettingGB)
 
 
-        self.horizontalLayout_3.addLayout(self.verticalLayout_7)
+        self.horizontalLayout_5.addLayout(self.verticalLayout_7)
 
         QWidget.setTabOrder(self.pushButton, self.hourDial)
         QWidget.setTabOrder(self.hourDial, self.minDial)
@@ -325,6 +373,10 @@ class Ui_Form(object):
         self.timeGB.setTitle(QCoreApplication.translate("Form", u"\u65f6\u95f4", None))
         self.label.setText(QCoreApplication.translate("Form", u"[TIME]", None))
         self.label_2.setText(QCoreApplication.translate("Form", u"[DATE]", None))
+        self.groupBox.setTitle(QCoreApplication.translate("Form", u"\u5929\u6c14", None))
+        self.weatherLogo.setText("")
+        self.weatherInfo.setText(QCoreApplication.translate("Form", u"TextLabel", None))
+        self.pushButton_2.setText(QCoreApplication.translate("Form", u"\u66f4\u591a\u4fe1\u606f\u2026", None))
         self.stopwatchGB.setTitle(QCoreApplication.translate("Form", u"\u79d2\u8868", None))
         self.label_3.setText(QCoreApplication.translate("Form", u"[TIME]", None))
         self.SPButton.setText(QCoreApplication.translate("Form", u"\u5f00\u59cb/\u6682\u505c", None))
