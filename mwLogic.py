@@ -1,9 +1,10 @@
 from PySide6 import QtCore, QtGui, QtWidgets
+from fwLogic import floatingWindow
 import mainWindowUI
 import time,datetime,json
 class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
     def __init__(self):
-        self.ptime = 0
+        self.ptime = 2400
         self.pdtime = 0
         self.counts = 0
         self.weekdays = ["time","Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
@@ -42,6 +43,7 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
             self.classes = json.load(f)
         self.clsTimer.start(1000*60*60)
         self.updateClasses()
+        self.activateFWButton.clicked.connect(self.showFloating)
     def updateTime(self):
         self.label.setText(time.strftime("%H:%M:%S"))
         self.label_2.setText(time.strftime("%Y-%m-%d %a"))
@@ -96,3 +98,7 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         for i in range(3):
             self.classesMd += f"\n|{self.classes[0][i]}|{self.classes[self.weekdays.index(time.strftime("%a"))][i]}|"
         self.classesBrowser.setMarkdown(self.classesMd)
+    def showFloating(self):
+        self.floating = floatingWindow(parent=self)
+        self.floating.show()
+        self.hide()

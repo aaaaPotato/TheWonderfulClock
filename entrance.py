@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import *
-from logic import window
+from mwLogic import window
 import sys
 if __name__ == "__main__":
     app = QApplication(sys.argv)

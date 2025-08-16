@@ -267,55 +267,10 @@ class Ui_Form(object):
 
         self.verticalLayout_7.addWidget(self.stopwatchGB)
 
-        self.groupBox = QGroupBox(Form)
-        self.groupBox.setObjectName(u"groupBox")
-        sizePolicy.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
-        self.groupBox.setSizePolicy(sizePolicy)
-        self.verticalLayout = QVBoxLayout(self.groupBox)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.horizontalLayout_4 = QHBoxLayout()
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.tempBar = QProgressBar(self.groupBox)
-        self.tempBar.setObjectName(u"tempBar")
-        self.tempBar.setValue(24)
-        self.tempBar.setOrientation(Qt.Orientation.Vertical)
+        self.activateFWButton = QPushButton(Form)
+        self.activateFWButton.setObjectName(u"activateFWButton")
 
-        self.horizontalLayout_4.addWidget(self.tempBar)
-
-        self.humBar = QProgressBar(self.groupBox)
-        self.humBar.setObjectName(u"humBar")
-        self.humBar.setValue(24)
-        self.humBar.setOrientation(Qt.Orientation.Vertical)
-
-        self.horizontalLayout_4.addWidget(self.humBar)
-
-        self.preBar = QProgressBar(self.groupBox)
-        self.preBar.setObjectName(u"preBar")
-        self.preBar.setValue(24)
-        self.preBar.setOrientation(Qt.Orientation.Vertical)
-
-        self.horizontalLayout_4.addWidget(self.preBar)
-
-
-        self.verticalLayout.addLayout(self.horizontalLayout_4)
-
-        self.tempLabel = QLabel(self.groupBox)
-        self.tempLabel.setObjectName(u"tempLabel")
-
-        self.verticalLayout.addWidget(self.tempLabel)
-
-        self.humLabel = QLabel(self.groupBox)
-        self.humLabel.setObjectName(u"humLabel")
-
-        self.verticalLayout.addWidget(self.humLabel)
-
-        self.preLabel = QLabel(self.groupBox)
-        self.preLabel.setObjectName(u"preLabel")
-
-        self.verticalLayout.addWidget(self.preLabel)
-
-
-        self.verticalLayout_7.addWidget(self.groupBox)
+        self.verticalLayout_7.addWidget(self.activateFWButton)
 
 
         self.horizontalLayout_3.addLayout(self.verticalLayout_7)
@@ -348,9 +303,6 @@ class Ui_Form(object):
         self.SPButton.setText(QCoreApplication.translate("Form", u"\u5f00\u59cb/\u6682\u505c", None))
         self.countingButton.setText(QCoreApplication.translate("Form", u"\u8ba1\u6b21", None))
         self.toZeroButton.setText(QCoreApplication.translate("Form", u"\u5f52\u96f6", None))
-        self.groupBox.setTitle(QCoreApplication.translate("Form", u"\u73af\u5883", None))
-        self.tempLabel.setText(QCoreApplication.translate("Form", u"Temp.", None))
-        self.humLabel.setText(QCoreApplication.translate("Form", u"Humi.", None))
-        self.preLabel.setText(QCoreApplication.translate("Form", u"Pres.", None))
+        self.activateFWButton.setText(QCoreApplication.translate("Form", u"\u542f\u52a8\u6d6e\u7a97", None))
     # retranslateUi
 
