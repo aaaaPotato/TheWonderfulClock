@@ -12,7 +12,7 @@ class floatingWindow(floatingWindowUI.Ui_Form, QtWidgets.QWidget):
         self.classTimeBar.setValue(2400)
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(lambda: self.timeLabel.setText(time.strftime("%H:%M:%S")))
-        self.timer.start(400)
+        self.timer.start(100)
         self.transparencySlider.valueChanged.connect(self.changeTransparency)
         self.backButton.clicked.connect(self.back)
         self.parentWidget = parent

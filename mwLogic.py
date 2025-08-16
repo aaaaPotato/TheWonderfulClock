@@ -44,6 +44,9 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         self.clsTimer.start(1000*60*60)
         self.updateClasses()
         self.activateFWButton.clicked.connect(self.showFloating)
+        self.flsTimer = QtCore.QTimer()
+        self.flsTimer.timeout.connect(self.checkFullscreen)
+        self.flsTimer.start(100)
     def updateTime(self):
         self.label.setText(time.strftime("%H:%M:%S"))
         self.label_2.setText(time.strftime("%Y-%m-%d %a"))
@@ -99,6 +102,15 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
             self.classesMd += f"\n|{self.classes[0][i]}|{self.classes[self.weekdays.index(time.strftime("%a"))][i]}|"
         self.classesBrowser.setMarkdown(self.classesMd)
     def showFloating(self):
+        self.fullscreenButton.setChecked(False)
         self.floating = floatingWindow(parent=self)
         self.floating.show()
         self.hide()
+    def checkFullscreen(self):
+        if self.fullscreenButton.isChecked():
+            self.showFullScreen()
+            self.activateFWButton.setEnabled(False)
+        else:
+            self.activateFWButton.setEnabled(True)
+            if self.isFullScreen():
+                self.showNormal()

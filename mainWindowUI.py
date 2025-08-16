@@ -24,7 +24,7 @@ class Ui_Form(object):
         if not Form.objectName():
             Form.setObjectName(u"Form")
         Form.setEnabled(True)
-        Form.resize(920, 582)
+        Form.resize(920, 490)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -198,8 +198,11 @@ class Ui_Form(object):
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.stopwatchGB = QGroupBox(Form)
         self.stopwatchGB.setObjectName(u"stopwatchGB")
-        sizePolicy.setHeightForWidth(self.stopwatchGB.sizePolicy().hasHeightForWidth())
-        self.stopwatchGB.setSizePolicy(sizePolicy)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.MinimumExpanding)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.stopwatchGB.sizePolicy().hasHeightForWidth())
+        self.stopwatchGB.setSizePolicy(sizePolicy6)
         self.verticalLayout_4 = QVBoxLayout(self.stopwatchGB)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.label_3 = QLabel(self.stopwatchGB)
@@ -267,10 +270,30 @@ class Ui_Form(object):
 
         self.verticalLayout_7.addWidget(self.stopwatchGB)
 
-        self.activateFWButton = QPushButton(Form)
-        self.activateFWButton.setObjectName(u"activateFWButton")
+        self.windowSettingGB = QGroupBox(Form)
+        self.windowSettingGB.setObjectName(u"windowSettingGB")
+        sizePolicy4.setHeightForWidth(self.windowSettingGB.sizePolicy().hasHeightForWidth())
+        self.windowSettingGB.setSizePolicy(sizePolicy4)
+        self.horizontalLayout_4 = QHBoxLayout(self.windowSettingGB)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.fullscreenButton = QPushButton(self.windowSettingGB)
+        self.fullscreenButton.setObjectName(u"fullscreenButton")
+        self.fullscreenButton.setCheckable(True)
 
-        self.verticalLayout_7.addWidget(self.activateFWButton)
+        self.horizontalLayout_4.addWidget(self.fullscreenButton)
+
+        self.activateFWButton = QPushButton(self.windowSettingGB)
+        self.activateFWButton.setObjectName(u"activateFWButton")
+        sizePolicy7 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.activateFWButton.sizePolicy().hasHeightForWidth())
+        self.activateFWButton.setSizePolicy(sizePolicy7)
+
+        self.horizontalLayout_4.addWidget(self.activateFWButton)
+
+
+        self.verticalLayout_7.addWidget(self.windowSettingGB)
 
 
         self.horizontalLayout_3.addLayout(self.verticalLayout_7)
@@ -279,9 +302,13 @@ class Ui_Form(object):
         QWidget.setTabOrder(self.hourDial, self.minDial)
         QWidget.setTabOrder(self.minDial, self.secDial)
         QWidget.setTabOrder(self.secDial, self.swDial)
-        QWidget.setTabOrder(self.swDial, self.SPButton)
+        QWidget.setTabOrder(self.swDial, self.countsBrowser)
+        QWidget.setTabOrder(self.countsBrowser, self.SPButton)
         QWidget.setTabOrder(self.SPButton, self.countingButton)
         QWidget.setTabOrder(self.countingButton, self.toZeroButton)
+        QWidget.setTabOrder(self.toZeroButton, self.fullscreenButton)
+        QWidget.setTabOrder(self.fullscreenButton, self.activateFWButton)
+        QWidget.setTabOrder(self.activateFWButton, self.classesBrowser)
 
         self.retranslateUi(Form)
 
@@ -303,6 +330,8 @@ class Ui_Form(object):
         self.SPButton.setText(QCoreApplication.translate("Form", u"\u5f00\u59cb/\u6682\u505c", None))
         self.countingButton.setText(QCoreApplication.translate("Form", u"\u8ba1\u6b21", None))
         self.toZeroButton.setText(QCoreApplication.translate("Form", u"\u5f52\u96f6", None))
+        self.windowSettingGB.setTitle(QCoreApplication.translate("Form", u"\u7a97\u53e3", None))
+        self.fullscreenButton.setText(QCoreApplication.translate("Form", u"\u5168\u5c4f", None))
         self.activateFWButton.setText(QCoreApplication.translate("Form", u"\u542f\u52a8\u6d6e\u7a97", None))
     # retranslateUi
 
