@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>221</width>
+    <height>440</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>当日天气</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="twLogo">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>weatherLogo/0@2x.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="twInfo">
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>weatherInfo</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>未来天气</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="fwdLogo">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>weatherLogo/5@2x.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="fwnLogo">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>weatherLogo/18@2x.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="fwInfo">
+          <property name="text">
+           <string>0~0℃</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="fwdLogo_2">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>weatherLogo/5@2x.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="fwnLogo_2">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>weatherLogo/18@2x.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="fwInfo_2">
+          <property name="text">
+           <string>0~0℃</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="fwdLogo_3">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>weatherLogo/5@2x.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="fwnLogo_3">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>weatherLogo/18@2x.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="fwInfo_3">
+          <property name="text">
+           <string>0~0℃</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>生活指数</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QTextBrowser" name="textBrowser">
+        <property name="lineWrapMode">
+         <enum>QTextEdit::LineWrapMode::NoWrap</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

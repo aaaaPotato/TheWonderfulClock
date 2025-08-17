@@ -1,5 +1,6 @@
 from PySide6 import QtCore, QtGui, QtWidgets
 from fwLogic import floatingWindow
+from wwLogic import weatherWindow
 import mainWindowUI
 import time,datetime,json,requests
 class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
@@ -51,6 +52,7 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         self.weatherTimer.timeout.connect(self.updateWeather)
         self.weatherTimer.start(1000*60*60)
         self.updateWeather()
+        self.pushButton_2.clicked.connect(self.showWeather)
     def updateTime(self):
         self.label.setText(time.strftime("%H:%M:%S"))
         self.label_2.setText(time.strftime("%Y-%m-%d %a"))
@@ -132,3 +134,7 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         except Exception as e:
             self.weatherInfo.setText("天气信息获取失败")
             print(f"Error fetching weather data: {e}")
+    def showWeather(self):
+        self.fullscreenButton.setChecked(False)
+        self.weatherW = weatherWindow(parent=self)
+        self.weatherW.show()
