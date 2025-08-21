@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'mainWindow.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.1
+## Created by: Qt User Interface Compiler version 6.9.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -25,7 +25,7 @@ class Ui_Form(object):
         if not Form.objectName():
             Form.setObjectName(u"Form")
         Form.setEnabled(True)
-        Form.resize(920, 490)
+        Form.resize(920, 642)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -318,6 +318,11 @@ class Ui_Form(object):
 
         self.verticalLayout_7.addWidget(self.stopwatchGB)
 
+        self.fsButton = QPushButton(Form)
+        self.fsButton.setObjectName(u"fsButton")
+
+        self.verticalLayout_7.addWidget(self.fsButton)
+
         self.windowSettingGB = QGroupBox(Form)
         self.windowSettingGB.setObjectName(u"windowSettingGB")
         sizePolicy4.setHeightForWidth(self.windowSettingGB.sizePolicy().hasHeightForWidth())
@@ -382,6 +387,10 @@ class Ui_Form(object):
         self.SPButton.setText(QCoreApplication.translate("Form", u"\u5f00\u59cb/\u6682\u505c", None))
         self.countingButton.setText(QCoreApplication.translate("Form", u"\u8ba1\u6b21", None))
         self.toZeroButton.setText(QCoreApplication.translate("Form", u"\u5f52\u96f6", None))
+#if QT_CONFIG(tooltip)
+        self.fsButton.setToolTip("")
+#endif // QT_CONFIG(tooltip)
+        self.fsButton.setText(QCoreApplication.translate("Form", u"\u6478  \u9c7c  \u5e7f  \u573a", None))
         self.windowSettingGB.setTitle(QCoreApplication.translate("Form", u"\u7a97\u53e3", None))
         self.fullscreenButton.setText(QCoreApplication.translate("Form", u"\u5168\u5c4f", None))
         self.activateFWButton.setText(QCoreApplication.translate("Form", u"\u542f\u52a8\u6d6e\u7a97", None))

@@ -1,6 +1,7 @@
 from PySide6 import QtCore, QtGui, QtWidgets
 from fwLogic import floatingWindow
 from wwLogic import weatherWindow
+from fishSquare.fsLogic import fsWindow
 import mainWindowUI
 import time,datetime,json,requests
 class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
@@ -53,6 +54,7 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         self.weatherTimer.start(1000*60*60)
         self.updateWeather()
         self.pushButton_2.clicked.connect(self.showWeather)
+        self.fsButton.clicked.connect(self.openFish)
     def updateTime(self):
         self.label.setText(time.strftime("%H:%M:%S"))
         self.label_2.setText(time.strftime("%Y-%m-%d %a"))
@@ -138,3 +140,6 @@ class window(mainWindowUI.Ui_Form, QtWidgets.QWidget):
         self.fullscreenButton.setChecked(False)
         self.weatherW = weatherWindow(parent=self)
         self.weatherW.show()
+    def openFish(self):
+        self.fishW = fsWindow(parent=self)
+        self.fishW.show()

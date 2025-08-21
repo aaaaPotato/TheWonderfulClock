@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>920</width>
-    <height>490</height>
+    <height>642</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -492,6 +492,16 @@
          </layout>
         </item>
        </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="fsButton">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="text">
+        <string>摸  鱼  广  场</string>
+       </property>
       </widget>
      </item>
      <item>
